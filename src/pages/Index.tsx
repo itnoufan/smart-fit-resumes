@@ -1,4 +1,3 @@
-import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import OfferHighlight from "@/components/landing/OfferHighlight";
 import ProblemsSection from "@/components/landing/ProblemsSection";
