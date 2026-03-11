@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Eye } from "lucide-react";
 import { motion } from "framer-motion";
 import heroMockup from "@/assets/hero-mockup.png";
+import CountdownTimer from "./CountdownTimer";
 
 interface HeroSectionProps {
   onStartFunnel: () => void;
@@ -34,10 +35,26 @@ const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto mb-8"
           >
             Upload the job description and instantly generate an ATS‑optimized resume tailored for the job you want.
           </motion.p>
+
+          {/* Offer Highlight Box */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
+            className="inline-flex flex-col items-center gap-3 bg-card border border-border rounded-2xl px-8 py-5 shadow-card mb-8"
+          >
+            <div className="flex items-baseline gap-3">
+              <span className="font-display text-4xl font-extrabold text-foreground">₹99</span>
+              <span className="text-muted-foreground text-lg line-through">₹999</span>
+              <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">SAVE 90%</span>
+            </div>
+            <CountdownTimer variant="compact" />
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
