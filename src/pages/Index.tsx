@@ -17,7 +17,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <HeroSection onStartFunnel={funnel.openFunnel} />
       <OfferHighlight onStartFunnel={funnel.openFunnel} />
       <ProblemsSection />
