@@ -1,7 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-const FinalCTASection = () => {
+interface FinalCTASectionProps {
+  onStartFunnel: () => void;
+}
+
+const FinalCTASection = ({ onStartFunnel }: FinalCTASectionProps) => {
   return (
     <section className="py-16 lg:py-24 bg-card">
       <div className="container mx-auto px-4 lg:px-8 text-center">
@@ -11,7 +15,7 @@ const FinalCTASection = () => {
         <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
           Join thousands of job seekers who landed interviews with Fit My Job.
         </p>
-        <Button variant="cta" size="xl">
+        <Button variant="cta" size="xl" onClick={onStartFunnel}>
           Create My Resume
           <ArrowRight className="w-5 h-5" />
         </Button>
