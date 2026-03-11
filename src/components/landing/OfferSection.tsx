@@ -1,0 +1,58 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight, Check, Zap } from "lucide-react";
+
+const included = [
+  "ATS-Friendly Templates",
+  "Job Description Optimization",
+  "ATS Score Checker",
+  "Cover Letter Builder",
+  "Global Resume Formats",
+  "Unlimited Resumes for 1 Year",
+];
+
+const OfferSection = () => {
+  return (
+    <section id="pricing" className="py-16 lg:py-24">
+      <div className="container mx-auto px-4 lg:px-8">
+        <div className="max-w-lg mx-auto">
+          <div className="bg-card rounded-3xl shadow-elevated border border-border overflow-hidden">
+            <div className="bg-foreground text-background px-8 py-6 text-center">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold mb-3">
+                <Zap className="w-3 h-3" /> LIMITED LAUNCH OFFER
+              </div>
+              <h2 className="font-display text-2xl lg:text-3xl font-bold mb-1">
+                Create Your Resume Today
+              </h2>
+            </div>
+            <div className="px-8 py-8">
+              <div className="flex items-baseline justify-center gap-3 mb-2">
+                <span className="font-display text-5xl font-extrabold text-foreground">₹99</span>
+                <span className="text-muted-foreground text-lg line-through">₹999</span>
+              </div>
+              <p className="text-center text-primary font-semibold text-sm mb-8">
+                Save 90% — Limited time only
+              </p>
+              <div className="space-y-3 mb-8">
+                {included.map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <Check className="w-5 h-5 text-primary shrink-0" />
+                    <span className="text-foreground text-sm font-medium">{item}</span>
+                  </div>
+                ))}
+              </div>
+              <Button variant="cta" size="xl" className="w-full">
+                Create My Resume Now
+                <ArrowRight className="w-5 h-5" />
+              </Button>
+              <p className="text-center text-muted-foreground text-xs mt-4">
+                One-time payment · No recurring charges · Instant access
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default OfferSection;
