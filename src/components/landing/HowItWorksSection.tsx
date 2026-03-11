@@ -1,27 +1,32 @@
 import { FileText, LayoutTemplate, Rocket } from "lucide-react";
+import { motion } from "framer-motion";
 
 const steps = [
   {
     num: "1",
     icon: FileText,
     title: "Choose Your CV Type",
-    description: "Select the resume format that fits your career stage and target role.",
+    description: "Select the resume format that fits your target job market.",
   },
   {
     num: "2",
     icon: LayoutTemplate,
     title: "Select an ATS-Friendly Template",
-    description: "Pick from professionally designed templates optimized for applicant tracking systems.",
+    description: "Pick from templates optimized for applicant tracking systems.",
   },
   {
     num: "3",
     icon: Rocket,
     title: "Build & Apply Confidently",
-    description: "Customize your resume, check your ATS score, and start applying with confidence.",
+    description: "Customize, check your ATS score, and start applying.",
   },
 ];
 
-const HowItWorksSection = () => {
+interface HowItWorksSectionProps {
+  onStartFunnel: () => void;
+}
+
+const HowItWorksSection = ({ onStartFunnel }: HowItWorksSectionProps) => {
   return (
     <section className="py-16 lg:py-24 bg-card">
       <div className="container mx-auto px-4 lg:px-8">
@@ -31,9 +36,16 @@ const HowItWorksSection = () => {
           </h2>
           <p className="text-muted-foreground text-lg">Three simple steps to your perfect resume.</p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {steps.map((step) => (
-            <div key={step.num} className="text-center relative">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+          {steps.map((step, i) => (
+            <motion.div
+              key={step.num}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="text-center relative"
+            >
               <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
                 <step.icon className="w-7 h-7 text-primary" />
               </div>
@@ -42,8 +54,16 @@ const HowItWorksSection = () => {
               </div>
               <h3 className="font-display text-lg font-bold text-foreground mb-2">{step.title}</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">{step.description}</p>
-            </div>
+            </motion.div>
           ))}
+        </div>
+        <div className="text-center">
+          <button
+            onClick={onStartFunnel}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-bold text-base shadow-lg hover:shadow-xl hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+          >
+            Start Now — It's Quick
+          </button>
         </div>
       </div>
     </section>
