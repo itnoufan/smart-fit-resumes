@@ -1,4 +1,3 @@
-import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
 import OfferHighlight from "@/components/landing/OfferHighlight";
 import ProblemsSection from "@/components/landing/ProblemsSection";
@@ -18,7 +17,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navbar />
       <HeroSection onStartFunnel={funnel.openFunnel} />
       <OfferHighlight onStartFunnel={funnel.openFunnel} />
       <ProblemsSection />
