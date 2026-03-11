@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Zap, Shield } from "lucide-react";
+import CountdownTimer from "@/components/landing/CountdownTimer";
 
 const included = [
   "ATS-Friendly Templates",
@@ -30,9 +31,12 @@ const FunnelStepFour = () => {
           <span className="font-display text-5xl font-extrabold text-foreground">₹99</span>
           <span className="text-muted-foreground text-lg line-through">₹999</span>
         </div>
-        <p className="text-center text-primary font-semibold text-sm mb-6">
+        <p className="text-center text-primary font-semibold text-sm mb-4">
           Save 90% — Limited Launch Offer
         </p>
+        <div className="flex justify-center mb-6">
+          <CountdownTimer variant="compact" />
+        </div>
         <div className="space-y-2.5 mb-6">
           {included.map((item) => (
             <div key={item} className="flex items-center gap-3">

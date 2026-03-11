@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Check, Zap } from "lucide-react";
+import CountdownTimer from "./CountdownTimer";
 
 const included = [
   "ATS-Friendly Templates",
@@ -10,7 +11,11 @@ const included = [
   "Unlimited Resumes for 1 Year",
 ];
 
-const OfferSection = () => {
+interface OfferSectionProps {
+  onStartFunnel?: () => void;
+}
+
+const OfferSection = ({ onStartFunnel }: OfferSectionProps) => {
   return (
     <section id="pricing" className="py-16 lg:py-24">
       <div className="container mx-auto px-4 lg:px-8">
@@ -25,13 +30,16 @@ const OfferSection = () => {
               </h2>
             </div>
             <div className="px-8 py-8">
-              <div className="flex items-baseline justify-center gap-3 mb-2">
+              <div className="flex items-baseline justify-center gap-3 mb-1">
                 <span className="font-display text-5xl font-extrabold text-foreground">₹99</span>
                 <span className="text-muted-foreground text-lg line-through">₹999</span>
               </div>
-              <p className="text-center text-primary font-semibold text-sm mb-8">
-                Save 90% — Limited time only
+              <p className="text-center text-primary font-semibold text-sm mb-2">
+                You Save ₹900 — Limited time only
               </p>
+              <div className="flex justify-center mb-6">
+                <CountdownTimer variant="compact" />
+              </div>
               <div className="space-y-3 mb-8">
                 {included.map((item) => (
                   <div key={item} className="flex items-center gap-3">
@@ -40,7 +48,7 @@ const OfferSection = () => {
                   </div>
                 ))}
               </div>
-              <Button variant="cta" size="xl" className="w-full">
+              <Button variant="cta" size="xl" className="w-full" onClick={onStartFunnel}>
                 Create My Resume Now
                 <ArrowRight className="w-5 h-5" />
               </Button>
