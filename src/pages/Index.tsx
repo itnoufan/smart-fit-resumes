@@ -1,5 +1,6 @@
 import Navbar from "@/components/landing/Navbar";
 import HeroSection from "@/components/landing/HeroSection";
+import OfferHighlight from "@/components/landing/OfferHighlight";
 import ProblemsSection from "@/components/landing/ProblemsSection";
 import SolutionSection from "@/components/landing/SolutionSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
@@ -19,12 +20,13 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection onStartFunnel={funnel.openFunnel} />
+      <OfferHighlight onStartFunnel={funnel.openFunnel} />
       <ProblemsSection />
       <SolutionSection />
       <HowItWorksSection onStartFunnel={funnel.openFunnel} />
       <TemplatesSection />
       <ValueStackSection />
-      <OfferSection />
+      <OfferSection onStartFunnel={funnel.openFunnel} />
       <FinalCTASection onStartFunnel={funnel.openFunnel} />
       <FAQSection />
       <Footer />
