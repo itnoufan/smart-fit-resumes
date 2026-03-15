@@ -21,7 +21,7 @@ const StickyBottomCTA = ({ onStartFunnel }: StickyBottomCTAProps) => {
           className="w-full max-w-md mx-auto flex"
           onClick={onStartFunnel}
         >
-          Get it for ₹99
+          Create My Resume
           <ArrowRight className="w-5 h-5" />
         </Button>
       </div>
