@@ -3,12 +3,11 @@ import { ArrowRight, Check, Zap } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 
 const included = [
-  "Unlimited resumes",
+  "Unlimited resumes for 6 months",
   "ATS-friendly templates",
   "Job-specific optimization",
   "AI + HR reviewed",
   "Global resume formats",
-  "24-hour turnaround",
 ];
 
 interface OfferSectionProps {
