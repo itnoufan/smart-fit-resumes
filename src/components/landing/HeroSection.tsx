@@ -120,7 +120,7 @@ const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.45 }}
-            className="flex items-center justify-center gap-6 sm:gap-10 mt-8"
+            className="flex items-center justify-center gap-4 sm:gap-10 mt-8"
           >
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
