@@ -5,7 +5,7 @@ import { useFunnelState } from "@/hooks/useFunnelState";
 import FunnelStepOne from "./FunnelStepOne";
 import FunnelStepTwo from "./FunnelStepTwo";
 import FunnelStepThree from "./FunnelStepThree";
-import FunnelStepFour from "./FunnelStepFour";
+
 
 interface FunnelModalProps {
   funnel: ReturnType<typeof useFunnelState>;
