@@ -2,6 +2,7 @@ import { useState } from "react";
 import { templatesByType, type CVType } from "@/data/funnelData";
 import { Check, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FunnelStepTwoProps {
   cvType: CVType;
