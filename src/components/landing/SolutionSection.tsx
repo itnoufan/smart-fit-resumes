@@ -2,8 +2,8 @@ import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
   "AI-powered resume optimization based on job descriptions",
-  "Real-time ATS compatibility scoring",
-  "Professional templates used by top companies",
+  "ATS-friendly templates that recruiters trust",
+  "Job-specific impact rewrites",
   "Country-specific formats for global job markets",
 ];
 
@@ -16,7 +16,7 @@ const SolutionSection = () => {
             The Smart Resume Builder for Job Seekers
           </h2>
           <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto">
-            Fit My Job helps you create a professionally optimized resume in minutes — not hours. Just upload the job description and let our AI do the rest.
+            Build a professionally optimized resume in minutes — not hours. Pick your CV type, choose a template, and we'll tailor it to your job.
           </p>
           <div className="grid sm:grid-cols-2 gap-4 text-left max-w-xl mx-auto">
             {benefits.map((b) => (

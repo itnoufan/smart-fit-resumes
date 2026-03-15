@@ -3,12 +3,12 @@ import { ArrowRight, Check, Zap } from "lucide-react";
 import CountdownTimer from "./CountdownTimer";
 
 const included = [
-  "ATS-Friendly Templates",
-  "Job Description Optimization",
-  "ATS Score Checker",
-  "Cover Letter Builder",
-  "Global Resume Formats",
-  "Unlimited Resumes for 1 Year",
+  "Unlimited resumes",
+  "ATS-friendly templates",
+  "Job-specific optimization",
+  "AI + HR reviewed",
+  "Global resume formats",
+  "24-hour turnaround",
 ];
 
 interface OfferSectionProps {
@@ -32,13 +32,13 @@ const OfferSection = ({ onStartFunnel }: OfferSectionProps) => {
             <div className="px-8 py-8">
               <div className="flex items-baseline justify-center gap-3 mb-1">
                 <span className="font-display text-5xl font-extrabold text-foreground">₹99</span>
-                <span className="text-muted-foreground text-lg line-through">₹999</span>
+                <span className="text-muted-foreground text-lg line-through">₹699</span>
               </div>
               <p className="text-center text-primary font-semibold text-sm mb-2">
-                You Save ₹900 — Limited time only
+                Limited time only — resets nightly
               </p>
               <div className="flex justify-center mb-6">
-                <CountdownTimer variant="compact" />
+                <CountdownTimer variant="compact" label="Offer resets in" />
               </div>
               <div className="space-y-3 mb-8">
                 {included.map((item) => (

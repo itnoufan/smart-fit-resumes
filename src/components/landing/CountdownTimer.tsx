@@ -6,7 +6,7 @@ interface CountdownTimerProps {
   variant?: "default" | "compact" | "dark";
 }
 
-const CountdownTimer = ({ label = "Offer expires in", variant = "default" }: CountdownTimerProps) => {
+const CountdownTimer = ({ label = "Offer resets in", variant = "default" }: CountdownTimerProps) => {
   const { hours, minutes, seconds, expired } = useCountdownTimer();
 
   if (expired) return null;

@@ -1,11 +1,10 @@
-import { LayoutTemplate, Target, BarChart3, FileEdit, Globe } from "lucide-react";
+import { LayoutTemplate, Target, BarChart3, PenLine, Globe } from "lucide-react";
 
 const features = [
-  { icon: LayoutTemplate, title: "ATS-Friendly Templates", description: "Professionally designed to pass automated screening systems." },
-  { icon: Target, title: "Job Description Optimization", description: "Upload a JD and auto-optimize your resume for that role." },
-  { icon: BarChart3, title: "ATS Score Checker", description: "Know your resume's compatibility score before you apply." },
-  { icon: FileEdit, title: "Cover Letter Builder", description: "Generate tailored cover letters that complement your resume." },
-  { icon: Globe, title: "Global Resume Formats", description: "India, GCC, Europass, US, UK, Canada, NZ — we've got you covered." },
+  { icon: LayoutTemplate, title: "ATS-Friendly Templates", description: "Designed to pass automated screening systems." },
+  { icon: Target, title: "Job Description Optimization", description: "Tailor your resume for each role in minutes." },
+  { icon: PenLine, title: "Impact Rewrite", description: "Turn responsibilities into achievements recruiters value." },
+  { icon: Globe, title: "Global Resume Formats", description: "India, GCC, Europass, US, UK, Canada, NZ — all supported." },
 ];
 
 const ValueStackSection = () => {
@@ -17,10 +16,10 @@ const ValueStackSection = () => {
             Everything You Need to Land Interviews
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            One platform with all the tools to create, optimize, and perfect your resume.
+            One platform to create, optimize, and perfect your resume.
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {features.map((f) => (
             <div
               key={f.title}

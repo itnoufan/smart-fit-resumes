@@ -13,7 +13,7 @@ const FinalCTASection = ({ onStartFunnel }: FinalCTASectionProps) => {
           Start Building Your Resume Now
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto mb-8">
-          Join thousands of job seekers who landed interviews with Fit My Job.
+          Join thousands of job seekers getting more interview calls with Fit My Job.
         </p>
         <Button variant="cta" size="xl" onClick={onStartFunnel}>
           Create My Resume
