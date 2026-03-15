@@ -61,18 +61,27 @@ const FunnelStepTwo = ({ cvType, onSelect }: FunnelStepTwoProps) => {
         ))}
       </div>
 
-      <div className="sticky bottom-0 bg-card border-t border-border -mx-6 sm:-mx-8 px-6 sm:px-8 py-4">
-        <Button
-          variant="cta"
-          size="xl"
-          disabled={!selected}
-          onClick={() => selected && onSelect(selected)}
-          className="w-full disabled:opacity-40"
-        >
-          Next
-          <ArrowRight className="w-5 h-5" />
-        </Button>
-      </div>
+      <AnimatePresence>
+        {selected && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 30 }}
+            transition={{ type: "spring", damping: 20, stiffness: 300 }}
+            className="sticky bottom-0 bg-card border-t border-border -mx-6 sm:-mx-8 px-6 sm:px-8 py-4"
+          >
+            <Button
+              variant="cta"
+              size="xl"
+              onClick={() => onSelect(selected)}
+              className="w-full"
+            >
+              Next
+              <ArrowRight className="w-5 h-5" />
+            </Button>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
