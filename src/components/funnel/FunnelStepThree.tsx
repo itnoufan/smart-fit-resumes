@@ -9,20 +9,20 @@ interface FunnelStepThreeProps {
 }
 
 const FunnelStepThree = ({ onSubmit }: FunnelStepThreeProps) => {
+  const [email, setEmail] = useState("");
   const [contactNumber, setContactNumber] = useState("");
-  const [jobTitle, setJobTitle] = useState("");
-  const [errors, setErrors] = useState<{ contact?: string; job?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string; contact?: string }>({});
 
   const handleSubmit = () => {
-    const newErrors: { contact?: string; job?: string } = {};
+    const newErrors: { email?: string; contact?: string } = {};
+    const trimmedEmail = email.trim();
     const trimmedContact = contactNumber.trim();
-    const trimmedJob = jobTitle.trim();
 
+    if (!trimmedEmail || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trimmedEmail)) {
+      newErrors.email = "Enter a valid email address";
+    }
     if (!trimmedContact || trimmedContact.length < 7 || trimmedContact.length > 20) {
       newErrors.contact = "Enter a valid contact number";
-    }
-    if (!trimmedJob || trimmedJob.length < 2 || trimmedJob.length > 100) {
-      newErrors.job = "Enter a valid job title";
     }
 
     if (Object.keys(newErrors).length) {
@@ -30,7 +30,7 @@ const FunnelStepThree = ({ onSubmit }: FunnelStepThreeProps) => {
       return;
     }
 
-    onSubmit(trimmedContact, trimmedJob);
+    onSubmit(trimmedContact, trimmedEmail);
   };
 
   return (
@@ -39,9 +39,28 @@ const FunnelStepThree = ({ onSubmit }: FunnelStepThreeProps) => {
         Quick Details
       </h2>
       <p className="text-muted-foreground mb-6">
-        We use this information to help optimize your resume for the right role.
+        We'll use this to send you your resume and keep you updated.
       </p>
       <div className="space-y-5 max-w-md">
+        <div>
+          <Label htmlFor="email" className="font-semibold text-foreground">
+            Email Address
+          </Label>
+          <Input
+            id="email"
+            type="email"
+            placeholder="you@example.com"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+              setErrors((prev) => ({ ...prev, email: undefined }));
+            }}
+            className="mt-1.5 h-12 rounded-xl"
+          />
+          {errors.email && (
+            <p className="text-destructive text-xs mt-1">{errors.email}</p>
+          )}
+        </div>
         <div>
           <Label htmlFor="contactNumber" className="font-semibold text-foreground">
             Contact Number
@@ -60,26 +79,6 @@ const FunnelStepThree = ({ onSubmit }: FunnelStepThreeProps) => {
           />
           {errors.contact && (
             <p className="text-destructive text-xs mt-1">{errors.contact}</p>
-          )}
-        </div>
-        <div>
-          <Label htmlFor="jobTitle" className="font-semibold text-foreground">
-            Job Title You're Applying For
-          </Label>
-          <Input
-            id="jobTitle"
-            type="text"
-            placeholder="e.g. Software Engineer, Marketing Manager"
-            value={jobTitle}
-            onChange={(e) => {
-              setJobTitle(e.target.value);
-              setErrors((prev) => ({ ...prev, job: undefined }));
-            }}
-            maxLength={100}
-            className="mt-1.5 h-12 rounded-xl"
-          />
-          {errors.job && (
-            <p className="text-destructive text-xs mt-1">{errors.job}</p>
           )}
         </div>
         <Button variant="cta" size="xl" className="w-full" onClick={handleSubmit}>
