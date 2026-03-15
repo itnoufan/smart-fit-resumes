@@ -21,7 +21,7 @@ const StickyBottomCTA = ({ onStartFunnel }: StickyBottomCTAProps) => {
           className="w-full max-w-md mx-auto flex"
           onClick={onStartFunnel}
         >
-          Create My Resume
+          Start Now
           <ArrowRight className="w-5 h-5" />
         </Button>
       </div>
