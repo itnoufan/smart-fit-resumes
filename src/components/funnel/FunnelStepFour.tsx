@@ -4,12 +4,11 @@ import CountdownTimer from "@/components/landing/CountdownTimer";
 import { motion } from "framer-motion";
 
 const included = [
-  "Unlimited resumes for 1 year",
+  "Unlimited resumes for 6 months",
   "ATS-friendly templates",
   "Job-specific optimization",
   "AI + HR reviewed content",
   "Global resume formats",
-  "24-hour turnaround",
 ];
 
 const FunnelStepFour = () => {
