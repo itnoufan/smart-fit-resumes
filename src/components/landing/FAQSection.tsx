@@ -11,7 +11,7 @@ const faqs = [
     a: "Yes. Every template is specifically designed and tested to pass major Applicant Tracking Systems like Workday, Greenhouse, Lever, and more. Our ATS Score Checker gives you a compatibility score before you apply.",
   },
   {
-    q: "How long does it take to build a resume?",
+    q: "How long does it take?",
     a: "Most users build a polished, ATS-optimized resume in under 15 minutes. Just upload the job description, select a template, and our AI fills in the rest.",
   },
   {
