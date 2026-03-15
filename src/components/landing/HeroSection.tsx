@@ -63,13 +63,23 @@ const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
           >
             {/* Offer Highlight Box */}
             <div className="flex flex-col items-center mb-6">
-              <div className="inline-flex flex-col items-center gap-3 bg-background border border-border rounded-xl px-6 sm:px-8 py-5">
-                <div className="flex items-baseline gap-3">
-                  <span className="font-display text-4xl sm:text-5xl font-extrabold text-foreground">₹99</span>
-                  <span className="text-muted-foreground text-lg line-through">₹699</span>
-                  <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">SAVE 85%</span>
+              <div className="relative inline-flex flex-col items-center gap-3 bg-foreground text-background rounded-xl px-6 sm:px-8 py-5 overflow-hidden">
+                {/* Animated glow */}
+                <div className="absolute -top-8 -right-8 w-20 h-20 bg-primary/30 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-secondary/30 rounded-full blur-2xl animate-pulse" />
+                
+                <div className="relative z-10 flex items-baseline gap-3">
+                  <span className="font-display text-4xl sm:text-5xl font-extrabold">₹99</span>
+                  <span className="text-background/40 text-lg line-through">₹699</span>
+                  <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">SAVE 85%</span>
                 </div>
-                <CountdownTimer variant="compact" label="Offer resets in" />
+                <div className="relative z-10 flex items-center gap-2 text-sm">
+                  <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />
+                  <span className="text-background/60 text-xs font-medium">Only few spots left at this price</span>
+                </div>
+                <div className="relative z-10">
+                  <CountdownTimer variant="dark" label="Offer resets in" />
+                </div>
               </div>
             </div>
 
