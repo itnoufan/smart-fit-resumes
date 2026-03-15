@@ -2,6 +2,7 @@ import { useState } from "react";
 import { cvTypes, type CVType } from "@/data/funnelData";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ScanSearch } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface FunnelStepOneProps {
   onSelect: (type: CVType) => void;
