@@ -44,7 +44,7 @@ const FunnelModal = ({ funnel }: FunnelModalProps) => {
                 </Button>
               )}
               <span className="font-display font-bold text-foreground">
-                Step {state.step} of 4
+                Step {state.step} of 3
               </span>
             </div>
             {/* Progress */}
