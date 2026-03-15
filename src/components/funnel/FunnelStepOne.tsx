@@ -157,16 +157,16 @@ const FunnelStepOne = ({ onSelect }: FunnelStepOneProps) => {
         ))}
       </div>
 
-      <div className="flex justify-end">
+      <div className="sticky bottom-0 bg-card border-t border-border -mx-6 sm:-mx-8 px-6 sm:px-8 py-4">
         <Button
           variant="cta"
-          size="lg"
+          size="xl"
           disabled={!selected}
           onClick={() => selected && onSelect(selected)}
-          className="disabled:opacity-40"
+          className="w-full disabled:opacity-40"
         >
           Next
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight className="w-5 h-5" />
         </Button>
       </div>
     </div>
