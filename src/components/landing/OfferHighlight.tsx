@@ -26,9 +26,11 @@ const OfferHighlight = ({ onStartFunnel }: OfferHighlightProps) => {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-bold mb-4">
               <Zap className="w-3 h-3" /> LIMITED LAUNCH OFFER
             </div>
-            <div className="flex items-baseline justify-center gap-3 mb-1">
-              <span className="font-display text-5xl lg:text-6xl font-extrabold">₹99</span>
-              <span className="text-background/50 text-xl line-through">₹699</span>
+            <div className="flex items-center justify-center gap-3 mb-1">
+              <span className="text-background/40 text-xl line-through decoration-destructive decoration-2">₹699</span>
+              <span className="text-background/50 text-xl">→</span>
+              <span className="font-display text-5xl lg:text-6xl font-extrabold text-primary">₹99</span>
+              <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">85% OFF</span>
             </div>
             <p className="text-primary font-bold text-lg mb-5">You Save ₹600</p>
             <div className="mb-6">
