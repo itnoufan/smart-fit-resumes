@@ -17,8 +17,9 @@ const Navbar = () => {
           <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
           <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
         </div>
-        <Button variant="cta" size="default">
-          Create My Resume
+        <Button variant="cta" size="default" className="text-xs sm:text-sm px-3 sm:px-4">
+          <span className="hidden sm:inline">Create My Resume</span>
+          <span className="sm:hidden">Start Now</span>
         </Button>
       </div>
     </nav>
