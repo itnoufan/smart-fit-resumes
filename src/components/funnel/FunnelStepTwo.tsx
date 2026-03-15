@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { templatesByType, type CVType } from "@/data/funnelData";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface FunnelStepTwoProps {
   cvType: CVType;
@@ -8,6 +10,7 @@ interface FunnelStepTwoProps {
 
 const FunnelStepTwo = ({ cvType, onSelect }: FunnelStepTwoProps) => {
   const templates = templatesByType[cvType];
+  const [selected, setSelected] = useState<string | null>(null);
 
   return (
     <div className="p-6 sm:p-8">
@@ -22,17 +25,26 @@ const FunnelStepTwo = ({ cvType, onSelect }: FunnelStepTwoProps) => {
       <p className="text-muted-foreground mb-6">
         All templates are tested to pass major ATS systems.
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-4">
         {templates.map((template) => (
           <button
             key={template.id}
-            onClick={() => onSelect(template.id)}
-            className="group relative rounded-xl border-2 border-border hover:border-primary bg-background overflow-hidden transition-all duration-200 hover:shadow-card-hover"
+            onClick={() => setSelected(template.id)}
+            className={`group relative rounded-xl border-2 bg-background overflow-hidden transition-all duration-200 ${
+              selected === template.id
+                ? "border-primary shadow-card ring-2 ring-primary/20"
+                : "border-border hover:border-primary hover:shadow-card-hover"
+            }`}
           >
             {template.badge && (
               <div className="absolute top-2 right-2 z-10 px-2 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-bold flex items-center gap-1">
                 <Check className="w-3 h-3" />
                 {template.badge}
+              </div>
+            )}
+            {selected === template.id && (
+              <div className="absolute top-2 left-2 z-10 w-6 h-6 rounded-full bg-primary text-primary-foreground flex items-center justify-center">
+                <Check className="w-4 h-4" />
               </div>
             )}
             <div className="aspect-[3/4] overflow-hidden bg-muted">
@@ -47,6 +59,19 @@ const FunnelStepTwo = ({ cvType, onSelect }: FunnelStepTwoProps) => {
             </div>
           </button>
         ))}
+      </div>
+
+      <div className="sticky bottom-0 bg-card border-t border-border -mx-6 sm:-mx-8 px-6 sm:px-8 py-4">
+        <Button
+          variant="cta"
+          size="xl"
+          disabled={!selected}
+          onClick={() => selected && onSelect(selected)}
+          className="w-full disabled:opacity-40"
+        >
+          Next
+          <ArrowRight className="w-5 h-5" />
+        </Button>
       </div>
     </div>
   );
