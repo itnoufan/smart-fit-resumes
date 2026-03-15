@@ -16,7 +16,7 @@ const FunnelModal = ({ funnel }: FunnelModalProps) => {
 
   if (!state.isOpen) return null;
 
-  const stepLabels = ["CV Type", "Template", "Details", "Unlock"];
+  const stepLabels = ["CV Type", "Template", "Details"];
 
   return (
     <AnimatePresence>
