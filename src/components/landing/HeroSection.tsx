@@ -1,16 +1,21 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Eye } from "lucide-react";
+import { ArrowRight, Eye, ShieldCheck, Target, Infinity } from "lucide-react";
 import { motion } from "framer-motion";
-import heroMockup from "@/assets/hero-mockup.png";
 import CountdownTimer from "./CountdownTimer";
 
 interface HeroSectionProps {
   onStartFunnel: () => void;
 }
 
+const featureBadges = [
+  { icon: ShieldCheck, title: "ATS-ready", desc: "Built to pass applicant tracking systems." },
+  { icon: Target, title: "Job-tailored", desc: "Optimize for each job in minutes." },
+  { icon: Infinity, title: "Unlimited", desc: "Create as many resumes as you need." },
+];
+
 const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
   return (
-    <section className="pt-28 pb-16 lg:pt-36 lg:pb-24">
+    <section className="pt-20 pb-16 lg:pt-28 lg:pb-24">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 lg:mb-16">
           <motion.div
@@ -49,10 +54,10 @@ const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
           >
             <div className="flex items-baseline gap-3">
               <span className="font-display text-4xl font-extrabold text-foreground">₹99</span>
-              <span className="text-muted-foreground text-lg line-through">₹999</span>
-              <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">SAVE 90%</span>
+              <span className="text-muted-foreground text-lg line-through">₹699</span>
+              <span className="bg-primary/10 text-primary text-xs font-bold px-2 py-0.5 rounded-full">SAVE 85%</span>
             </div>
-            <CountdownTimer variant="compact" />
+            <CountdownTimer variant="compact" label="Offer resets in" />
           </motion.div>
 
           <motion.div
@@ -73,18 +78,25 @@ const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
             </Button>
           </motion.div>
         </div>
+
+        {/* Feature Badges */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="relative max-w-5xl mx-auto"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="max-w-3xl mx-auto"
         >
-          <div className="absolute inset-0 bg-primary/5 rounded-2xl blur-3xl -z-10" />
-          <img
-            src={heroMockup}
-            alt="Fit My Job Resume Builder interface showing a professional resume with 92% ATS score"
-            className="w-full rounded-2xl shadow-elevated border border-border"
-          />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {featureBadges.map((badge) => (
+              <div
+                key={badge.title}
+                className="bg-card rounded-xl border border-border p-5 shadow-card"
+              >
+                <h3 className="font-display font-bold text-foreground mb-1">{badge.title}</h3>
+                <p className="text-muted-foreground text-sm">{badge.desc}</p>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>

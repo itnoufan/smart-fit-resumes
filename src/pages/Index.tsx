@@ -9,6 +9,7 @@ import OfferSection from "@/components/landing/OfferSection";
 import FinalCTASection from "@/components/landing/FinalCTASection";
 import FAQSection from "@/components/landing/FAQSection";
 import Footer from "@/components/landing/Footer";
+import StickyBottomCTA from "@/components/landing/StickyBottomCTA";
 import FunnelModal from "@/components/funnel/FunnelModal";
 import { useFunnelState } from "@/hooks/useFunnelState";
 
@@ -16,7 +17,7 @@ const Index = () => {
   const funnel = useFunnelState();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pb-20">
       <HeroSection onStartFunnel={funnel.openFunnel} />
       <OfferHighlight onStartFunnel={funnel.openFunnel} />
       <ProblemsSection />
@@ -28,6 +29,7 @@ const Index = () => {
       <FinalCTASection onStartFunnel={funnel.openFunnel} />
       <FAQSection />
       <Footer />
+      <StickyBottomCTA onStartFunnel={funnel.openFunnel} />
       <FunnelModal funnel={funnel} />
     </div>
   );

@@ -23,11 +23,11 @@ const OfferHighlight = ({ onStartFunnel }: OfferHighlightProps) => {
           </div>
           <div className="flex items-baseline justify-center gap-3 mb-1">
             <span className="font-display text-5xl lg:text-6xl font-extrabold">₹99</span>
-            <span className="text-background/50 text-xl line-through">₹999</span>
+            <span className="text-background/50 text-xl line-through">₹699</span>
           </div>
-          <p className="text-primary font-bold text-lg mb-6">You Save ₹900</p>
+          <p className="text-primary font-bold text-lg mb-6">You Save ₹600</p>
           <div className="mb-8">
-            <CountdownTimer variant="dark" />
+            <CountdownTimer variant="dark" label="Offer resets in" />
           </div>
           <Button
             variant="cta"
