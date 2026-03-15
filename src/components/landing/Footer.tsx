@@ -1,5 +1,5 @@
-import { FileText } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.jpg";
 
 const footerLinks = [
   { label: "Terms & Conditions", path: "/terms" },
@@ -17,9 +17,7 @@ const Footer = () => {
         <div className="flex flex-col items-center gap-6">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-primary flex items-center justify-center">
-              <FileText className="w-3.5 h-3.5 text-primary-foreground" />
-            </div>
+            <img src={logo} alt="Fit My Job" className="w-7 h-7 rounded-lg object-cover" />
             <span className="font-display font-bold text-foreground">Fit My Job</span>
           </div>
 
