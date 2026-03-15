@@ -43,9 +43,11 @@ const FunnelStepFour = () => {
 
         {/* Price */}
         <div className="text-center mb-4 relative z-10">
-          <div className="flex items-baseline justify-center gap-2 mb-1">
-            <span className="font-display text-4xl sm:text-5xl font-extrabold text-foreground">₹99</span>
-            <span className="text-muted-foreground text-base line-through">₹699</span>
+          <div className="flex items-center justify-center gap-2 mb-1">
+            <span className="text-muted-foreground text-base line-through decoration-destructive decoration-2">₹699</span>
+            <span className="text-muted-foreground">→</span>
+            <span className="font-display text-4xl sm:text-5xl font-extrabold text-primary">₹99</span>
+            <span className="bg-primary text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">85% OFF</span>
           </div>
           <div className="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full">
             SAVE 85% — Limited Offer

@@ -29,9 +29,11 @@ const OfferSection = ({ onStartFunnel }: OfferSectionProps) => {
               </h2>
             </div>
             <div className="px-8 py-8">
-              <div className="flex items-baseline justify-center gap-3 mb-1">
-                <span className="font-display text-5xl font-extrabold text-foreground">₹99</span>
-                <span className="text-muted-foreground text-lg line-through">₹699</span>
+              <div className="flex items-center justify-center gap-3 mb-1">
+                <span className="text-muted-foreground text-lg line-through decoration-destructive decoration-2">₹699</span>
+                <span className="text-muted-foreground text-lg">→</span>
+                <span className="font-display text-5xl font-extrabold text-primary">₹99</span>
+                <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">85% OFF</span>
               </div>
               <p className="text-center text-primary font-semibold text-sm mb-2">
                 Limited time only — resets nightly

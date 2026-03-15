@@ -68,10 +68,11 @@ const HeroSection = ({ onStartFunnel }: HeroSectionProps) => {
                 <div className="absolute -top-8 -right-8 w-20 h-20 bg-primary/30 rounded-full blur-2xl animate-pulse" />
                 <div className="absolute -bottom-8 -left-8 w-20 h-20 bg-secondary/30 rounded-full blur-2xl animate-pulse" />
                 
-                <div className="relative z-10 flex items-baseline gap-3">
-                  <span className="font-display text-4xl sm:text-5xl font-extrabold">₹99</span>
-                  <span className="text-background/40 text-lg line-through">₹699</span>
-                  <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">SAVE 85%</span>
+                <div className="relative z-10 flex items-center gap-3">
+                  <span className="text-background/40 text-lg line-through decoration-destructive decoration-2">₹699</span>
+                  <span className="text-background/60">→</span>
+                  <span className="font-display text-4xl sm:text-5xl font-extrabold text-primary">₹99</span>
+                  <span className="bg-primary text-primary-foreground text-xs font-bold px-2.5 py-1 rounded-full animate-pulse">85% OFF</span>
                 </div>
                 <div className="relative z-10 flex items-center gap-2 text-sm">
                   <span className="w-2 h-2 rounded-full bg-destructive animate-pulse" />

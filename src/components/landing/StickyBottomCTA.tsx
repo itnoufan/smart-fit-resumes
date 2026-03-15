@@ -17,8 +17,9 @@ const StickyBottomCTA = ({ onStartFunnel }: StickyBottomCTAProps) => {
     >
       <div className="container mx-auto px-4 flex items-center justify-center gap-3">
         <div className="hidden sm:flex items-center gap-2">
-          <span className="font-display font-extrabold text-foreground">₹99</span>
-          <span className="text-muted-foreground text-sm line-through">₹699</span>
+          <span className="text-muted-foreground text-sm line-through decoration-destructive">₹699</span>
+          <span className="text-muted-foreground text-sm">→</span>
+          <span className="font-display font-extrabold text-primary">₹99</span>
           <span className="text-muted-foreground text-xs">·</span>
           <CountdownTimer variant="compact" label="" />
         </div>
