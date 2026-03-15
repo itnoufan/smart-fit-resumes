@@ -11,14 +11,14 @@ const steps = [
   {
     num: "2",
     icon: LayoutTemplate,
-    title: "Select an ATS-Friendly Template",
-    description: "Pick from templates optimized for applicant tracking systems.",
+    title: "Select a Template",
+    description: "Pick from ATS-friendly templates designed to get shortlisted.",
   },
   {
     num: "3",
     icon: Rocket,
     title: "Build & Apply Confidently",
-    description: "Customize, check your ATS score, and start applying.",
+    description: "Tailor, download, and start applying with confidence.",
   },
 ];
 

@@ -14,7 +14,7 @@ const problems = [
   {
     icon: Clock,
     title: "Recruiters Reject Quickly",
-    description: "Recruiters spend less than 10 seconds reviewing each resume. Yours needs to stand out instantly.",
+    description: "Recruiters spend seconds reviewing each resume. Yours needs to stand out instantly.",
   },
 ];
 
