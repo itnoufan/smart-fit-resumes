@@ -77,7 +77,7 @@ const FunnelStepFour = () => {
         {/* CTA */}
         <Button variant="cta" size="xl" className="w-full mb-3">
           <Lock className="w-4 h-4" />
-          Unlock My Resume Builder — ₹99
+          Get My Resume
           <ArrowRight className="w-5 h-5" />
         </Button>
 
