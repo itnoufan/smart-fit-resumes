@@ -6,8 +6,6 @@ export interface FunnelState {
   step: number;
   cvType: CVType | null;
   templateId: string | null;
-  contactNumber: string;
-  jobTitle: string;
 }
 
 export const useFunnelState = () => {
@@ -16,8 +14,6 @@ export const useFunnelState = () => {
     step: 1,
     cvType: null,
     templateId: null,
-    contactNumber: "",
-    jobTitle: "",
   });
 
   const openFunnel = useCallback(() => {
@@ -30,8 +26,6 @@ export const useFunnelState = () => {
       step: 1,
       cvType: null,
       templateId: null,
-      contactNumber: "",
-      jobTitle: "",
     });
   }, []);
 
@@ -43,13 +37,9 @@ export const useFunnelState = () => {
     setState((s) => ({ ...s, templateId, step: 3 }));
   }, []);
 
-  const setDetails = useCallback((contactNumber: string, jobTitle: string) => {
-    setState((s) => ({ ...s, contactNumber, jobTitle, step: 4 }));
-  }, []);
-
   const goBack = useCallback(() => {
     setState((s) => ({ ...s, step: Math.max(1, s.step - 1) }));
   }, []);
 
-  return { state, openFunnel, closeFunnel, setCvType, setTemplate, setDetails, goBack };
+  return { state, openFunnel, closeFunnel, setCvType, setTemplate, goBack };
 };
