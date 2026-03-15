@@ -5,7 +5,7 @@ import { useFunnelState } from "@/hooks/useFunnelState";
 import FunnelStepOne from "./FunnelStepOne";
 import FunnelStepTwo from "./FunnelStepTwo";
 import FunnelStepThree from "./FunnelStepThree";
-import FunnelStepFour from "./FunnelStepFour";
+
 
 interface FunnelModalProps {
   funnel: ReturnType<typeof useFunnelState>;
@@ -16,7 +16,7 @@ const FunnelModal = ({ funnel }: FunnelModalProps) => {
 
   if (!state.isOpen) return null;
 
-  const stepLabels = ["CV Type", "Template", "Details", "Unlock"];
+  const stepLabels = ["CV Type", "Template", "Details"];
 
   return (
     <AnimatePresence>
@@ -44,7 +44,7 @@ const FunnelModal = ({ funnel }: FunnelModalProps) => {
                 </Button>
               )}
               <span className="font-display font-bold text-foreground">
-                Step {state.step} of 4
+                Step {state.step} of 3
               </span>
             </div>
             {/* Progress */}
@@ -82,11 +82,6 @@ const FunnelModal = ({ funnel }: FunnelModalProps) => {
               {state.step === 3 && (
                 <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                   <FunnelStepThree onSubmit={setDetails} />
-                </motion.div>
-              )}
-              {state.step === 4 && (
-                <motion.div key="step4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
-                  <FunnelStepFour />
                 </motion.div>
               )}
             </AnimatePresence>

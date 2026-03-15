@@ -44,7 +44,9 @@ export const useFunnelState = () => {
   }, []);
 
   const setDetails = useCallback((contactNumber: string, jobTitle: string) => {
-    setState((s) => ({ ...s, contactNumber, jobTitle, step: 4 }));
+    setState((s) => ({ ...s, contactNumber, jobTitle }));
+    // TODO: Redirect to payment gateway here
+    console.log("Funnel complete — ready for payment redirect");
   }, []);
 
   const goBack = useCallback(() => {
