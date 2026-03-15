@@ -15,7 +15,6 @@ import { useFunnelState } from "@/hooks/useFunnelState";
 
 const Index = () => {
   const funnel = useFunnelState();
-  
 
   return (
     <div className="min-h-screen bg-background pb-20">
