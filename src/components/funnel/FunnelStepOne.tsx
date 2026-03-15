@@ -26,14 +26,16 @@ const FunnelStepOne = ({ onSelect }: FunnelStepOneProps) => {
           <button
             key={type.id}
             onClick={() => setSelected(type.id)}
-            className={`px-4 py-3.5 rounded-lg border-2 text-sm font-semibold transition-all duration-150
+            className={`flex flex-col items-center text-center px-3 py-4 rounded-xl border-2 transition-all duration-150
               ${
                 selected === type.id
-                  ? "border-primary bg-primary/5 text-primary"
-                  : "border-border bg-background text-foreground hover:border-muted-foreground/40"
+                  ? "border-primary bg-primary/5 shadow-card"
+                  : "border-border bg-background hover:border-muted-foreground/40"
               }`}
           >
-            {type.label}
+            <span className="text-2xl mb-1.5">{type.flag}</span>
+            <span className="font-display font-bold text-sm text-foreground">{type.label}</span>
+            <span className="text-[11px] leading-tight text-muted-foreground mt-1">{type.description}</span>
           </button>
         ))}
       </div>

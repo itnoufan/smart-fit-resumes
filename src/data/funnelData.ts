@@ -6,11 +6,13 @@ import templateEuro1 from "@/assets/template-euro-1.png";
 import templateUs1 from "@/assets/template-us-1.png";
 import templateUk1 from "@/assets/template-uk-1.png";
 
-export type CVType = "gcc" | "india" | "europass" | "us" | "uk" | "canada" | "nz" | "ats";
+export type CVType = "ats" | "gcc" | "india" | "europass" | "uk" | "canada" | "nz" | "us";
 
 export interface CVTypeOption {
   id: CVType;
   label: string;
+  flag: string;
+  description: string;
 }
 
 export interface TemplateOption {
@@ -21,17 +23,22 @@ export interface TemplateOption {
 }
 
 export const cvTypes: CVTypeOption[] = [
-  { id: "gcc", label: "GCC" },
-  { id: "india", label: "India" },
-  { id: "europass", label: "Europass" },
-  { id: "us", label: "US" },
-  { id: "uk", label: "UK" },
-  { id: "canada", label: "Canada" },
-  { id: "nz", label: "New Zealand (NZ)" },
-  { id: "ats", label: "ATS" },
+  { id: "ats", label: "ATS", flag: "🤖", description: "Optimized resume for ATS software used by companies" },
+  { id: "gcc", label: "GCC", flag: "🇦🇪", description: "For jobs in UAE, Saudi Arabia, Qatar, Oman" },
+  { id: "india", label: "India", flag: "🇮🇳", description: "Best for Indian companies and recruiters" },
+  { id: "europass", label: "Europass", flag: "🇪🇺", description: "Standard resume format used in Europe" },
+  { id: "uk", label: "UK", flag: "🇬🇧", description: "Professional resume format for UK jobs" },
+  { id: "canada", label: "Canada", flag: "🇨🇦", description: "Standard resume for Canadian employers" },
+  { id: "nz", label: "New Zealand", flag: "🇳🇿", description: "Resume format preferred by NZ recruiters" },
+  { id: "us", label: "US", flag: "🇺🇸", description: "American style resume" },
 ];
 
 export const templatesByType: Record<CVType, TemplateOption[]> = {
+  ats: [
+    { id: "ats-1", name: "ATS Optimized", image: templateIndia1, badge: "Most Popular" },
+    { id: "ats-2", name: "ATS Clean", image: templateIndia3 },
+    { id: "ats-3", name: "ATS Minimal", image: templateUs1 },
+  ],
   gcc: [
     { id: "gcc-1", name: "Gulf Professional", image: templateGcc1, badge: "Most Popular" },
     { id: "gcc-2", name: "Dubai Modern", image: templateIndia1 },
@@ -46,11 +53,6 @@ export const templatesByType: Record<CVType, TemplateOption[]> = {
     { id: "eu-1", name: "Europass Standard", image: templateEuro1, badge: "EU Standard" },
     { id: "eu-2", name: "Modern European", image: templateIndia3 },
     { id: "eu-3", name: "Berlin Minimal", image: templateUs1 },
-  ],
-  us: [
-    { id: "us-1", name: "Silicon Valley", image: templateUs1, badge: "Most Popular" },
-    { id: "us-2", name: "New York Classic", image: templateIndia1 },
-    { id: "us-3", name: "Toronto Modern", image: templateIndia3 },
   ],
   uk: [
     { id: "uk-1", name: "London Professional", image: templateUk1, badge: "Most Popular" },
@@ -67,9 +69,9 @@ export const templatesByType: Record<CVType, TemplateOption[]> = {
     { id: "nz-2", name: "Wellington Modern", image: templateEuro1 },
     { id: "nz-3", name: "Christchurch Classic", image: templateIndia2 },
   ],
-  ats: [
-    { id: "ats-1", name: "ATS Optimized", image: templateIndia1, badge: "Most Popular" },
-    { id: "ats-2", name: "ATS Clean", image: templateIndia3 },
-    { id: "ats-3", name: "ATS Minimal", image: templateUs1 },
+  us: [
+    { id: "us-1", name: "Silicon Valley", image: templateUs1, badge: "Most Popular" },
+    { id: "us-2", name: "New York Classic", image: templateIndia1 },
+    { id: "us-3", name: "Chicago Modern", image: templateIndia3 },
   ],
 };
