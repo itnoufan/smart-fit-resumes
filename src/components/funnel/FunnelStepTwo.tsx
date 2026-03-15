@@ -71,15 +71,26 @@ const FunnelStepTwo = ({ cvType, onSelect }: FunnelStepTwoProps) => {
             transition={{ type: "spring", damping: 20, stiffness: 300 }}
             className="sticky bottom-0 bg-card border-t border-border -mx-6 sm:-mx-8 px-6 sm:px-8 py-4"
           >
-            <Button
-              variant="cta"
-              size="xl"
-              onClick={() => onSelect(selected)}
-              className="w-full"
+            <motion.div
+              animate={{ scale: [1, 1.03, 1] }}
+              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
             >
-              Next
-              <ArrowRight className="w-5 h-5" />
-            </Button>
+              <Button
+                variant="cta"
+                size="xl"
+                onClick={() => onSelect(selected)}
+                className="w-full relative overflow-hidden group"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+                Next
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1, ease: "easeInOut" }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.span>
+              </Button>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
